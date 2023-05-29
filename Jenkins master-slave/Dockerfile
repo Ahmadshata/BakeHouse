@@ -41,4 +41,4 @@ RUN apt-get update && apt-get install -y openjdk-11-jdk && rm -rf /var/lib/apt/l
 EXPOSE 22
 
 # tail -f the "f" stands for follow it monitors the file in real-time
-ENTRYPOINT ["/bin/bash", "-c", "service ssh start && tail -f /dev/null && chmod 777 /var/run/docker.socket"]
+ENTRYPOINT ["/bin/bash", "-c", "service ssh start && tail -f /dev/null && chmod 777 /var/run/docker.sock"]
