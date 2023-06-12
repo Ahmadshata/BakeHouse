@@ -25,8 +25,12 @@ RUN apt-get update && apt-get install -y \
     docker.io \
     vim \
  && rm -rf /var/lib/apt/lists/*
-
-
+ 
+ #install helm
+ RUN curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 -o get_helm.sh  \
+    && chmod 700 get_helm.sh \
+    && ./get_helm.sh
+    
 #install kubectl
 RUN apt update && apt-get install gnupg gnupg1 gnupg2 -y
 RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
